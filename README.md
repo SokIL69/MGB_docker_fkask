@@ -52,16 +52,20 @@ Credit Default - факт невыполнения кредитных обяза
 
 
 Клонируем репозиторий и создаем образ 
-'''
+
+```
 $ git clone https://github.com/SokIL69/MLB_docker_flask.git 
 $ cd MLB_docker_flask 
 $ docker build -t sil/gb_mlb_docker_flask . 
-'''
+```
+
 Запускаем контейнер
 
 Необходимо локально создать каталог и сохранить в нём предобученную модель (<your_local_path_to_pretrained_models> нужно  заменить на полный путь к этому каталогу)
 
+```
 $ docker run -d -p 8182:8182 -p 8181:8181 -v <your_local_path_to_pretrained_models>:/app/app/models sil/gb_mlb_docker_flask
+```
 
 Файл с кодом для тестирования модели из jupyter notebook:
   - step_3_15.ipynb
