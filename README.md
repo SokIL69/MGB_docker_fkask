@@ -34,6 +34,7 @@ Credit Default - факт невыполнения кредитных обяза
 - Обработка выбрасов
 - Обработка категорий
 - Генерация новых фич
+- Нормализация данных
 
 Модель: logreg
 
@@ -64,4 +65,6 @@ $ docker run -d -p 8182:8182 -p 8181:8181 -v <your_local_path_to_pretrained_mode
 Файл с кодом для тестирования модели из jupyter notebook:
   - step_3_15.ipynb
 
+### Открыть в jupyter notebook файл step_3_15.ipynb
 ### web-api - localhost:8182
+### Перейти на web-страницу - localhost:8181
