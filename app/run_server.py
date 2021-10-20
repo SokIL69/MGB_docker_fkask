@@ -37,6 +37,7 @@ def load_model(model_path):
 
 
 # modelpath = "/home/sil/ML/Ml_in_bisiness/logreg_pipeline_v15.dill"
+# modelpath = "/home/sil/ML/lesson_9/models/v_15/logreg_pipeline_v15.dill"
 modelpath = "/app/app/models/logreg_pipeline_v15.dill"
 load_model(modelpath)
 
