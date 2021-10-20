@@ -1,47 +1,67 @@
-﻿# MGB_docker_flask
+# python-flask-docker
 Итоговый проект курса "Машинное обучение в бизнесе"
+Задание выполнил Соковнин И.Л.
 
 Стек:
 
 ML: sklearn, pandas, numpy API: flask Данные: с kaggle - https://www.kaggle.com/c/654pds2courseproject/data
 
-Задача: Требуется, на основании имеющихся данных о клиентах банка, построить модель, используяобучающий датасет,
-	для прогнозирования невыполнения долговых обязательств по текущему кредиту. Бинарная классификация
+Задача: Требуется, на основании имеющихся данных о клиентах банка, построить модель, используяобучающий датасет, для прогнозирования невыполнения долговых обязательств по текущему кредиту. Бинарная классификация
 
 Используемые признаки:
 
-1. Home Ownership - домовладение
-2. Annual Income - годовой доход
-3. Years in current job - количество лет на текущем месте работы
-4. Tax Liens - налоговые обременения
-5. Number of Open Accounts - количество открытых счетов
-6. Years of Credit History - количество лет кредитной истории
-7. Maximum Open Credit - наибольший открытый кредит
-8. Number of Credit Problems - количество проблем с кредитом
-9. Months since last delinquent - количество месяцев с последней просрочки платежа
-10. Bankruptcies - банкротства
-11. Purpose - цель кредита
-12. Term - срок кредита
-13. Current Loan Amount - текущая сумма кредита
-14. Current Credit Balance - текущий кредитный баланс
-15. Monthly Debt - ежемесячный долг
-16. Credit Score - Кредитный рейтинг
-17. Credit Default - факт невыполнения кредитных обязательств (0 - погашен вовремя, 1 -просрочка)
+Home Ownership - домовладение
+Annual Income - годовой доход
+Years in current job - количество лет на текущем месте работы
+Tax Liens - налоговые обременения
+Number of Open Accounts - количество открытых счетов
+Years of Credit History - количество лет кредитной истории
+Maximum Open Credit - наибольший открытый кредит
+Number of Credit Problems - количество проблем с кредитом
+Months since last delinquent - количество месяцев с последней просрочки платежа
+Bankruptcies - банкротства
+Purpose - цель кредита
+Term - срок кредита
+Current Loan Amount - текущая сумма кредита
+Current Credit Balance - текущий кредитный баланс
+Monthly Debt - ежемесячный долг
+Credit Score - Кредитный рейтинг
+Credit Default - факт невыполнения кредитных обязательств (0 - погашен вовремя, 1 -просрочка)
+
 
 Преобразования признаков:
-1. Обработка пропусков
-2. Обработка выбрасов
-3. Обработка категорий
-4. Генерация новых фич
+- Обработка пропусков
+- Обработка выбрасов
+- Обработка категорий
+- Генерация новых фич
+
+Модель: logreg
+
+Каталог app/models/:
+1. Модель-пайплайн предобученная:
+  - logreg_pipeline_v15.dll
+2. Подготовленные файлы с преобразованными данными для тестирования:
+  - X_test.csv
+  - Y_test.csv
+3. Файл с кодом для тестирования модели из jupyter notebook:
+  - step_3_15.ipynb
+4. Текст задания:
+  - HW.ipynb
 
 
-Модель: catboost
 
-Клонируем репозиторий и создаем образ
-$ git clone https://github.com/fimochka-sudo/GB_docker_flask_example.git
-$ cd GB_docker_flask_example
-$ docker build -t fimochka/gb_docker_flask_example .
+Клонируем репозиторий и создаем образ 
+$ git clone https://github.com/SokIL69/MLB_docker_flask.git 
+$ cd MLB_docker_flask 
+$ docker build -t sil/gb_mlb_docker_flask . 
+
 Запускаем контейнер
-Здесь Вам нужно создать каталог локально и сохранить туда предобученную модель (<your_local_path_to_pretrained_models> нужно заменить на полный путь к этому каталогу)
 
-$ docker run -d -p 8180:8180 -p 8181:8181 -v <your_local_path_to_pretrained_models>:/app/app/models fimochka/gb_docker_flask_example
+Нужно создать каталог локально и сохранить туда предобученную модель (<your_local_path_to_pretrained_models> нужно заменить на полный путь к этому каталогу)
+
+$ docker run -d -p 8182:8182 -p 8181:8181 -v <your_local_path_to_pretrained_models>:/app/app/models sil/gb_mlb_docker_flask
+
+Файл с кодом для тестирования модели из jupyter notebook:
+  - step_3_15.ipynb
+
+### web-api - localhost:8182
