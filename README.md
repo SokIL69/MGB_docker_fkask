@@ -52,7 +52,7 @@ __Каталог app/models/__:
 
 
 
-Клонируем репозиторий и создаем образ 
+__Клонируем репозиторий и создаем образ__
 
 ```
 $ git clone https://github.com/SokIL69/MLB_docker_flask.git 
@@ -60,7 +60,7 @@ $ cd MLB_docker_flask
 $ docker build -t sil/gb_mlb_docker_flask . 
 ```
 
-Запускаем контейнер
+__Запускаем контейнер__
 
 Необходимо локально создать каталог и сохранить в нём предобученную модель (<your_local_path_to_pretrained_models> нужно  заменить на полный путь к этому каталогу)
 
@@ -72,6 +72,7 @@ $ docker run -d -p 8182:8182 -p 8181:8181 -v <your_local_path_to_pretrained_mode
   - step_3_15.ipynb
 
 
-- Открыть в jupyter notebook файл step_3_15.ipynb
-- web-api - localhost:8182
-- Перейти на web-страницу - localhost:8181
+##### Перейти на web-страницу - localhost:8181
+##### Открыть в jupyter notebook файл step_3_15.ipynb
+##### web-api - localhost:8182
+
